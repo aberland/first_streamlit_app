@@ -41,5 +41,5 @@ streamlit.dataframe(my_data_row)
 new_fruit_choice = streamlit.text_input('What fruit would you like to add?')
 if new_fruit_choice != '':
   my_cur.execute("insert into fruit_load_list (fruit_name) values ('" + new_fruit_choice + "')")
-my_cur.execute("delete from fruit_load_list where fruit_name = ''")
+my_cur.execute("delete from fruit_load_list where fruit_name = 'pear'")
 
