@@ -1,4 +1,8 @@
+streamlit.stop()
+
 import streamlit, pandas, requests
+import snowflake.connector
+from urllib.error import URLError
 
 streamlit.title('My parents new healthy diner')
 
@@ -29,7 +33,6 @@ fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 streamlit.dataframe(fruityvice_normalized)
 
 # Snowflake connection
-import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 # display table content
