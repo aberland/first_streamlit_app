@@ -1,4 +1,4 @@
-import streamlit
+import streamlit, pandas, requests
 
 streamlit.title('My parents new healthy diner')
 
@@ -21,7 +21,6 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
 
 # Panda normalization
-import pandas, requests
 streamlit.header("Fruityvice Fruit Advice!")
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
 streamlit.write('The user entered ', fruit_choice)
